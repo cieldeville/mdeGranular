@@ -27,7 +27,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE/pd
         ./autogen.sh
-        ./configure
+        ./configure --enable-libpd
         make
         sudo make install
     - name: Build and Install mdeGranular
