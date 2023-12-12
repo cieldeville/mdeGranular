@@ -33,7 +33,7 @@ jobs:
     - name: Build and Install mdeGranular
       run: |
         cd $GITHUB_WORKSPACE/mde
-        cmake -G "Unix Makefiles" -B builds/cmake -DCMAKE_FIND_DEBUG_MODE=TRUE -DMDE_TARGET_SDK_PATH=$GITHUB_WORKSPACE/pd -DCMAKE_VERBOSE_MAKEFILE=TRUE -S .
+        cmake -G "Unix Makefiles" -B builds/cmake -DMDE_TARGET_SDK=PD -DMDE_TARGET_SDK_PATH=$GITHUB_WORKSPACE/pd -S .
         cd builds/cmake
         make
     - name: Upload Binaries

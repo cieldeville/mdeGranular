@@ -53,11 +53,11 @@ jobs:
     - name: Build and Install mdeGranular
       run: |
         cd $GITHUB_WORKSPACE/mde
-        cmake -G "MSYS Makefiles" -B builds/cmake -DMDE_TARGET_SDK_PATH=$GITHUB_WORKSPACE/pd -DCMAKE_VERBOSE_MAKEFILE=TRUE -S .
+        cmake -G "MSYS Makefiles" -B builds/cmake -DMDE_TARGET_SDK=PD -DMDE_TARGET_SDK_PATH=$GITHUB_WORKSPACE/pd -S .
         cd builds/cmake
         make
     - name: Upload Binaries
       uses: actions/upload-artifact@v3
       with:
         name: mdeGranular~.dll
-        path: ${{ github.workspace }}/builds/cmake/mdeGranular~.dll
+        path: ${{ github.workspace }}/mde/builds/cmake/mdeGranular~.dll
